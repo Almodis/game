@@ -1,0 +1,103 @@
+<html>
+  <head>
+    <title>ESL Activities.com Word Scramble</title>
+    <link rel="stylesheet" href="scramble.css" type="text/css">
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <script type="text/javascript" src="sc0773866001739098899.js"></script>
+    <script type="text/javascript" src="scramble.js"></script>
+  </head>
+
+  <body onLoad="init()">
+    <script type="text/javascript" src="wz_dragdrop.js"></script>
+    <h2 align="center" style="color:#12327C" style="margin-bottom:0">Word Scramble</h2>
+    <table align="center" width="600">
+      <tr>
+        <td valign="top"><b>Directions:</b></td>
+        <td>Put the letters in the correct order by clicking and dragging them to the correct squares.</td>
+      </tr>
+    </table>
+    <br>
+
+    <div id="timeDiv">
+    <table align="center">
+      <tr>
+        <td style="color:#12327C"><b>Time:</b></td>
+        <td>
+          <table width="400" align="center" style="border:1px solid #12327C; border-collapse:collapse; border-spacing:0">
+            <tr>
+              <td width="20" id="time1" class="time">&nbsp;</td>
+              <td width="20" id="time2" class="time">&nbsp;</td>
+              <td width="20" id="time3" class="time">&nbsp;</td>
+              <td width="20" id="time4" class="time">&nbsp;</td>
+              <td width="20" id="time5" class="time">&nbsp;</td>
+              <td width="20" id="time6" class="time">&nbsp;</td>
+              <td width="20" id="time7" class="time">&nbsp;</td>
+              <td width="20" id="time8" class="time">&nbsp;</td>
+              <td width="20" id="time9" class="time">&nbsp;</td>
+              <td width="20" id="time10" class="time">&nbsp;</td>
+              <td width="20" id="time11" class="time">&nbsp;</td>
+              <td width="20" id="time12" class="time">&nbsp;</td>
+              <td width="20" id="time13" class="time">&nbsp;</td>
+              <td width="20" id="time14" class="time">&nbsp;</td>
+              <td width="20" id="time15" class="time">&nbsp;</td>
+              <td width="20" id="time16" class="time">&nbsp;</td>
+              <td width="20" id="time17" class="time">&nbsp;</td>
+              <td width="20" id="time18" class="time">&nbsp;</td>
+              <td width="20" id="time19" class="time">&nbsp;</td>
+              <td width="20" id="time20" class="time">&nbsp;</td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+    </div>
+    <p align="center" id="curScore" name="curScore" style="font-family:'trebuchet ms',helvetica,sans-serif; color:#12327C; font-weight:bold; font-size:18pt; text-align:center">&nbsp;</p>
+
+    <p align="center" id="wordPara" name="wordPara">
+      <span id="wordNum" name="wordNum" style="font-family:'trebuchet ms',helvetica,sans-serif; color:#12327C; font-weight:bold; font-size:18pt; text-align:center">&nbsp;</span><br>
+      <span id="clueSpan" style="text-align:center">&nbsp;</span><br><br>
+    </p>
+
+    <div id="correct" style="position:absolute; display:none; border:2px solid #12327C; width:400; height:300; background-color:#E2EAFC;z-index:100">
+      <table align="center">
+        <tr>
+          <td height="300" valign="center" align="center" style="font-family:'trebuchet ms',helvetica,sans-serif; color:#12327C; font-weight:bold; font-size:20pt">GOOD JOB!<br><img src="Smiley.gif"><br><br><input type="button" value="CONTINUE" id="correctContinue" onClick="checkFinished('correct',this)" style="font-family:'trebuchet ms',helvetica,arial,sans-serif; font-size:12pt; font-weight:bold; color:#12327C"></td>
+        </tr>
+      </table>
+    </div>
+
+    <div id="wrong" style="position:absolute; display:none; border:2px solid #12327C; width:400; height:300; background-color:#E2EAFC;z-index:100">
+      <table align="center">
+        <tr>
+          <td height="300" valign="center" align="center" style="font-family:'trebuchet ms',helvetica,sans-serif; color:#12327C; font-weight:bold; font-size:20pt">SORRY!<br><img src="Frownie.gif"><br><br><input type="button" value="CONTINUE" id="wrongContinue" onClick="checkFinished('wrong',this)" style="font-family:'trebuchet ms',helvetica,arial,sans-serif; font-size:12pt; font-weight:bold; color:#12327C"></td>
+        </tr>
+      </table>
+    </div>
+    <div id="beginDiv" style="position:absolute; display:none; border:2px solid #12327C; width:400; height:300; background-color:#E2EAFC; z-index:100">
+      <table border="0" align="center">
+        <tr>
+          <td height="300" valign="center" align="center" style="font-family:'trebuchet ms',helvetica,sans-serif; color:#12327C; font-weight:bold; font-size:20pt">Click on the "Begin Game" button to begin the game.<br><br><input type="button" id="beginButton" name="beginButton" value="BEGIN GAME" onClick="gameStart()" style="font-family:'trebuchet ms',helvetica,arial,sans-serif; font-size:12pt; font-weight:bold; color:#12327C"></td>
+        </tr>
+      </table>
+    </div>
+    <div id="finished" style="position:absolute; display:none; border:2px solid #12327C; width:400; height:300; background-color:#E2EAFC; padding:20px; z-index:100">
+      <table align="center">
+        <tr>
+          <td height="300" valign="center" align="center" style="font-family:'trebuchet ms',helvetica,sans-serif; color:#12327C; font-weight:bold">
+            <div id="finishedGreeting" style="font-family:'trebuchet ms',helvetica,sans-serif; color:#12327C; font-weight:bold; font-size:20pt; text-align:center">&nbsp;</div><br>
+            Your score is:<br>
+            <div id="finishedScore" style="font-family:'trebuchet ms',helvetica,sans-serif; color:#12327C; font-weight:bold; text-align:center">&nbsp;</div><br><div id="finishedMessage" style="font-family:'trebuchet ms',helvetica,sans-serif; color:#12327C; font-weight:bold; text-align:left">&nbsp;</div><br><br><div id="missedWordsDiv" style="display:none">
+            Here are the words you missed:<br>
+            <textarea name="missedWords" rows="5" cols="30"></textarea></div>
+            <br><br>
+            <div id="finishedButton"><input type="button" value="PLAY AGAIN" onClick="init()" style="font-family:'trebuchet ms',helvetica,arial,sans-serif; font-size:12pt; font-weight:bold; color:#12327C"> <input type="button" onClick="window.close()" value="FINISHED" style="font-family:'trebuchet ms',helvetica,arial,sans-serif; font-size:12pt; font-weight:bold; color:#12327C"></div>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <p align="center" style="font-size:8pt">&copy; 2025 ESL Activities.com</p>
+    <script type="text/javascript">
+      SET_DHTML(CURSOR_MOVE);
+    </script>
+  </body>
+</html>

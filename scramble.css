@@ -1,0 +1,7 @@
+body {font-family: Arial; font-size: 12pt; background-color: #E2EAFC }
+td { font-family: Arial; font-size: 12pt; background-color: #E2EAFC }
+.keyBoard { width:35px; height:35px; font-family:'trebuchet ms',helvetica,arial,sans-serif; font-size:14pt; font-weight:bold; color:#12327C }
+.time { background-color:#00FF00 }
+.notime { background-color:#FF0000 }
+div.letterDiv { position:relative; text-align:center; width:30; height:30; font-size:25; font-weight:bold; color:#12327C; background-color:#FFFFFF; border:solid 1px #12327C }
+div.anchorDiv { width:30; height:30; text-align:center; font-size:25; font-weight:bold; color:#CCCCCC; background-color:#CCCCCC; border:solid 1px #555555 }
